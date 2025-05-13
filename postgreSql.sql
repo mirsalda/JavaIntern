@@ -64,3 +64,58 @@ SELECT *
 FROM student
 WHERE EXTRACT(YEAR FROM AGE(birth_date)) < 2000;
 
+
+SELECT 
+  student.id AS student_id,
+  student.name AS student_name,
+  student.email,
+  kursi.emri_kursit,
+  kursi.kohezgjatja
+FROM student
+INNER JOIN kursi ON student.student_key = kursi.id;
+
+
+SELECT COUNT(id)
+FROM student;
+
+SELECT AVG(kohezgjatja)
+FROM kursi;
+
+SELECT AVG(pike)
+FROM student;
+
+
+SELECT SUM(pike)
+FROM student;
+
+SELECT kursi.emri_kursit, COUNT(student.id)
+FROM student
+LEFT JOIN kursi ON student.id= kursi.id
+GROUP BY emri_kursit;
+
+
+SELECT * 
+FROM student
+ORDER BY birth_date;
+
+CREATE TABLE application (
+  id SERIAL PRIMARY KEY,
+  application_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  status VARCHAR(50),
+  student_id INTEGER,
+  kursi_id INTEGER,
+  FOREIGN KEY (student_id) REFERENCES student(id),
+  FOREIGN KEY (kursi_id) REFERENCES kursi(id)
+);
+INSERT INTO application (status, student_id, kursi_id) VALUES
+('Pending', 1, 1),
+('Accepted', 2, 1),
+('Rejected', 3, 2),
+('Pending', 1, 3),
+('Accepted', 4, 2);
+
+
+
+SELECT * FROM  application;
+
+

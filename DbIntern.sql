@@ -31,6 +31,21 @@ FOREIGN KEY (rezervim_id) REFERENCES rezervim(rezervim_id)
 );
 
 
+CREATE TABLE klient_tables (
+    klient_id INT,
+    table_id INT,
+    PRIMARY KEY (klient_id, table_id),
+    FOREIGN KEY (klient_id) REFERENCES klient(klient_id),
+    FOREIGN KEY (table_id) REFERENCES tables(table_id)
+);
+
+INSERT INTO klient_tables (klient_id, table_id)
+SELECT r.klient_id, r.table_id
+FROM rezervim r;
+
+
+SELECT * FROM klient_tables;
+
 
 INSERT INTO klient (klient_id, emri, mbiemri, phone) VALUES
 (1, 'Mirsalda', 'D', '123456789'),

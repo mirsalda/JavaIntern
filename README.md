@@ -26,8 +26,8 @@ Ky eshte nje projekt Spring Boot me nje REST Controller qe ofron disa endpoint-e
 - `GET http://localhost:8080/hello` → "Hello World"
 - `POST http://localhost:8080/greet?language=sq` → "Pershendetje!"
 
--  -![fig](img_3.png)
-  -![fig](img_3.png)
+-  -![fig]![img_3.png](img_3.png)
+  -![fig]![img_4.png](img_4.png)
 
 
 
@@ -36,13 +36,13 @@ Ky eshte nje projekt Spring Boot me nje REST Controller qe ofron disa endpoint-e
 - Hap Postman.
 - Per kerkesat GET, krijo nje `GET` request me URL si `http://localhost:8080/static-message`.
 -
--![fig](img_1.png)
+-![fig]![img_1.png](img_1.png)
 
 
 - Per kerkesat POST, krijo nje `POST` request me URL si `http://localhost:8080/greet?language=en`.
 - Shto parametra ne URL sipas nevojes (p.sh. `language=sq`).
 - Dergo kerkesen dhe shiko pergjigjen ne Postman.
-  ![fig](img_2.png)
+  ![fig]![img.png](img.png)
 
 ---
 
